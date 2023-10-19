@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Interview</title>
+</head>
+<body>
+    <a href="{% url 'teacher_students' %}"><button>Teachers Info</button></a>
+    <a href="{% url 'student_teachers' %}"><button>Students Info</button></a>
+    <h2>Verify JWT Token</h2>
+    <form method="post" action="{% url 'verify_certificate' %}">
+        {% csrf_token %}
+        <label for="jwt_input">Enter JWT Token:</label>
+        <input type="text" id="jwt_input" name="jwt_token">
+        <button type="submit">Verify</button>
+    </form>
+
+    
+</body>
+</html>

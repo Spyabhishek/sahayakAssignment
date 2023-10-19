@@ -1,0 +1,21 @@
+<!-- generate_certificate.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Generate Certificate</title>
+</head>
+<body>
+    <h1>Certificate for {{ student.name }} Taught by {{ teacher.name }}</h1>
+
+    <div class="certificate-content">
+        <!-- Add your certificate content here -->
+        <p>This is to certify that</p>
+        <h2>{{ student.name }}</h2>
+        <p>has successfully completed the course taught by</p>
+        <h2>{{ teacher.name }}</h2>
+        <p>Date: {{ certificate_date }}</p>
+        <p>JWT Token: {{ jwt_token }}</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!-- student_teachers.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Teachers</title>
+</head>
+<body>
+    <h1>Select a Student</h1>
+    <form method="get">
+        <select name="student_id">
+            <option value="">Select a Student</option>
+            {% for student in students %}
+                <option value="{{ student.student_id }}">{{ student.name }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Show Teachers">
+    </form>
+
+    <h2>Teachers of the selected student:</h2>
+    <ul>
+        {% for teacher in teachers %}
+            <li>{{ teacher.name }} (ID: {{ teacher.teacher_id }})
+                <a href="/generate_certificate/{{selected_student}}/{{teacher.teacher_id}}"><button>Generate Certificate</button></a>
+            </li>
+            
+        {% endfor %}
+    </ul>
+</body>
+</html>

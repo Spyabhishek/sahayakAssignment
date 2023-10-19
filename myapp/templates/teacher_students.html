@@ -1,0 +1,29 @@
+<!-- teacher_students.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teacher Students</title>
+</head>
+<body>
+    
+    <h1>Select a Teacher</h1>
+    <form method="get">
+        <select name="teacher_id">
+            <option value="">Select a Teacher</option>
+            {% for teacher in teachers %}
+                <option value="{{ teacher.teacher_id }}">{{ teacher.name }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Show Students">
+    </form>
+
+    <h2>Students taught by the selected teacher:</h2>
+    <ul>
+        {% for student in students %}
+            <li>{{ student.name }} (ID: {{ student.student_id }})</li>
+        {% endfor %}
+    </ul>
+    </body>
+</body>
+</html>
